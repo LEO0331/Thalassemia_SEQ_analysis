@@ -1,0 +1,9 @@
+.venv/
+node_modules/
+.next/
+out/
+.pytest_cache/
+__pycache__/
+*.pyc
+.coverage
+coverage.xml

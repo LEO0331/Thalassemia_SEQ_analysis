@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "backend/api/analyze.py", "use": "@vercel/python" },
+    { "src": "frontend/package.json", "use": "@vercel/next" }
+  ],
+  "routes": [
+    { "src": "/api/analyze", "dest": "backend/api/analyze.py" },
+    { "src": "/api/health", "dest": "backend/api/analyze.py" },
+    { "handle": "filesystem" },
+    { "src": "/(.*)", "dest": "frontend/$1" }
+  ]
+}

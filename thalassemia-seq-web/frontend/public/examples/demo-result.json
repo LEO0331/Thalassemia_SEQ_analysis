@@ -1,0 +1,106 @@
+{
+  "ok": true,
+  "file_name": "demo-sample.ab1",
+  "primer_type": "T0128",
+  "qc": {
+    "sequence_length": 128,
+    "average_quality": 31.4,
+    "low_quality_regions": [
+      {
+        "start": 98,
+        "end": 105,
+        "average_quality": 14.3
+      }
+    ],
+    "warnings": []
+  },
+  "analysis": {
+    "primer_type": "T0128",
+    "sequence_length": 128,
+    "mutations": [
+      {
+        "name": "WS",
+        "status": "WT",
+        "position": 24,
+        "matched_pattern": "CGCCTCCC",
+        "quality_score": 18,
+        "confidence": "high",
+        "notes": "Legacy single-site threshold rule."
+      },
+      {
+        "name": "QS",
+        "status": "heterozygous",
+        "position": 61,
+        "matched_pattern": "TGGACAAG",
+        "quality_score": -2,
+        "confidence": "low",
+        "notes": "Legacy single-site threshold rule."
+      },
+      {
+        "name": "CS",
+        "status": "WT",
+        "position": 88,
+        "matched_pattern": "TAAGCTGGAG",
+        "quality_score": 11,
+        "confidence": "high",
+        "notes": "Legacy single-site threshold rule."
+      }
+    ],
+    "warnings": []
+  },
+  "report": {
+    "file_name": "demo-sample.ab1",
+    "primer_type": "T0128",
+    "sequence_length": 128,
+    "qc_summary": {
+      "sequence_length": 128,
+      "average_quality": 31.4,
+      "low_quality_regions": [
+        {
+          "start": 98,
+          "end": 105,
+          "average_quality": 14.3
+        }
+      ],
+      "warnings": []
+    },
+    "mutation_summary": {
+      "total_mutations": 3,
+      "status_counts": {
+        "WT": 2,
+        "heterozygous": 1
+      },
+      "mutations": [
+        {
+          "name": "WS",
+          "status": "WT",
+          "position": 24,
+          "matched_pattern": "CGCCTCCC",
+          "quality_score": 18,
+          "confidence": "high",
+          "notes": "Legacy single-site threshold rule."
+        },
+        {
+          "name": "QS",
+          "status": "heterozygous",
+          "position": 61,
+          "matched_pattern": "TGGACAAG",
+          "quality_score": -2,
+          "confidence": "low",
+          "notes": "Legacy single-site threshold rule."
+        },
+        {
+          "name": "CS",
+          "status": "WT",
+          "position": 88,
+          "matched_pattern": "TAAGCTGGAG",
+          "quality_score": 11,
+          "confidence": "high",
+          "notes": "Legacy single-site threshold rule."
+        }
+      ]
+    },
+    "warnings": [],
+    "disclaimer": "This tool is for educational/research workflow support only and must not be used as a standalone clinical diagnostic tool."
+  }
+}
