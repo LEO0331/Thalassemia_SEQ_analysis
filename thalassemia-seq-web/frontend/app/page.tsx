@@ -13,7 +13,8 @@ import type { APIError, APIResult } from "../lib/types";
 export default function HomePage() {
   const [file, setFile] = useState<File | null>(null);
   const [primer, setPrimer] = useState("T0128");
-  const [loading, setLoading] = useState(false);
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [isLoadingDemo, setIsLoadingDemo] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<APIResult | null>(null);
 
@@ -28,7 +29,7 @@ export default function HomePage() {
       return;
     }
 
-    setLoading(true);
+    setIsAnalyzing(true);
     try {
       const formData = new FormData();
       formData.append("file", file);
@@ -49,13 +50,13 @@ export default function HomePage() {
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unexpected error.");
     } finally {
-      setLoading(false);
+      setIsAnalyzing(false);
     }
   };
 
   const loadDemo = async () => {
     setError(null);
-    setLoading(true);
+    setIsLoadingDemo(true);
     try {
       const response = await fetch("/examples/demo-result.json");
       if (!response.ok) {
@@ -66,7 +67,7 @@ export default function HomePage() {
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unexpected error.");
     } finally {
-      setLoading(false);
+      setIsLoadingDemo(false);
     }
   };
 
@@ -93,16 +94,29 @@ export default function HomePage() {
 
       <section className="panel actions-panel">
         <div className="actions">
-          <button className="btn btn-primary" type="button" onClick={runAnalysis} disabled={loading}>
-            {loading ? "Analyzing..." : "Analyze"}
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={runAnalysis}
+            disabled={isAnalyzing || isLoadingDemo || !file}
+            aria-disabled={isAnalyzing || isLoadingDemo || !file}
+            title={!file ? "Upload an .ab1 file to enable analysis." : undefined}
+          >
+            {isAnalyzing ? "Analyzing..." : "Analyze"}
           </button>
-          <button className="btn btn-secondary" type="button" onClick={loadDemo} disabled={loading}>
-            Load demo result
+          <button
+            className="btn btn-secondary"
+            type="button"
+            onClick={loadDemo}
+            disabled={isLoadingDemo || isAnalyzing}
+          >
+            {isLoadingDemo ? "Loading demo..." : "Load demo result"}
           </button>
         </div>
         <p className="muted small">
           Supported groups: T0128, T0021, T0133, T0131, T023, T0145, T024
         </p>
+        {!file && <p className="muted small">Upload a `.ab1` file to enable Analyze.</p>}
       </section>
 
       {error && (

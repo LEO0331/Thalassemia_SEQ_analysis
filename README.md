@@ -1,9 +1,47 @@
-# Thalassemia_SEQ_analysis
+# Thalassemia Sanger Sequencing Mutation Checker
 
-This repository now contains the original research notebooks/scripts and a refactored full-stack prototype.
+A practical web tool for primer-specific review of Sanger sequencing `.ab1` files used in thalassemia mutation screening workflows.
 
-- Legacy notebooks/scripts remain at repository root and `Dataset and py/`.
-- New web app lives in `thalassemia-seq-web/`.
+## What This Project Is
+This repository provides a full-stack prototype that helps users:
+- Upload `.ab1` Sanger sequencing files
+- Select target primer groups
+- Run deterministic mutation and QC checks
+- Review results in a browser
+- Export a structured JSON report
 
-See:
+## Who It Is For
+- Research labs and academic workflows
+- Bioinformatics support teams
+- Internal validation and training use cases
+
+## Important Disclaimer
+This tool is for educational and research workflow support only.
+It must not be used as a standalone clinical diagnostic tool.
+Any clinical interpretation should be reviewed and validated by qualified professionals using approved laboratory procedures.
+
+## Project Layout
+- `thalassemia-seq-web/` - deployable full-stack application
+  - `frontend/` - Next.js web interface
+  - `backend/` - Python FastAPI + ABI/QC/mutation logic
+- `notebooks/` - original exploratory Jupyter notebooks
+- `Dataset and py/` - legacy scripts and sample/archived assets
+
+## Quick Start
+See the implementation guide in:
 - `thalassemia-seq-web/README.md`
+
+## GitHub Short Description (Suggested)
+Upload `.ab1` Sanger files, run primer-specific thalassemia mutation checks, view QC/mutation results in web UI, and export JSON reports.
+
+## GitHub Topics/Tags (Suggested)
+- thalassemia
+- sanger-sequencing
+- abi
+- ab1
+- bioinformatics
+- nextjs
+- fastapi
+- python
+- genomics
+- healthcare-research
