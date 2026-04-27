@@ -11,10 +11,6 @@ jobs:
     outputs:
       preview_url: ${{ steps.deploy.outputs.preview_url }}
 
-    defaults:
-      run:
-        working-directory: thalassemia-seq-web
-
     env:
       VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
       VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
