@@ -56,6 +56,7 @@ export default function HomePage() {
 
   const loadDemo = async () => {
     setError(null);
+    setResult(null);
     setIsLoadingDemo(true);
     try {
       const response = await fetch("/examples/demo-result.json");

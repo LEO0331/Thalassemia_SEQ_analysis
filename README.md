@@ -30,18 +30,3 @@ Any clinical interpretation should be reviewed and validated by qualified profes
 ## Quick Start
 See the implementation guide in:
 - `thalassemia-seq-web/README.md`
-
-## GitHub Short Description (Suggested)
-Upload `.ab1` Sanger files, run primer-specific thalassemia mutation checks, view QC/mutation results in web UI, and export JSON reports.
-
-## GitHub Topics/Tags (Suggested)
-- thalassemia
-- sanger-sequencing
-- abi
-- ab1
-- bioinformatics
-- nextjs
-- fastapi
-- python
-- genomics
-- healthcare-research
