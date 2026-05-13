@@ -12,6 +12,9 @@
   --good: #1f6a4a;
   --shadow: 0 16px 34px rgba(11, 32, 43, 0.12);
   --radius: 14px;
+  --font-body: "Avenir Next", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: Iowan Old Style, Palatino Linotype, Book Antiqua, Georgia, serif;
+  --font-mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 * {

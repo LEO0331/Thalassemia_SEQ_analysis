@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { useState } from "react";
 
 import DownloadReportButton from "../components/DownloadReportButton";
 import FileUpload from "../components/FileUpload";
@@ -18,7 +18,7 @@ export default function HomePage() {
   const [error, setError] = useState<string | null>(null);
   const [result, setResult] = useState<APIResult | null>(null);
 
-  const apiBase = useMemo(() => (process.env.NEXT_PUBLIC_API_BASE_URL ?? "").replace(/\/$/, ""), []);
+  const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL ?? "").replace(/\/$/, "");
 
   const runAnalysis = async () => {
     setError(null);
